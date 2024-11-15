@@ -32,10 +32,10 @@ while k <= 100:  #хотелось существенно больше, для �
         p = i
         j = i + 1
         for j in range(len(a)):
-            if a[j] < a[p]:
+            if a2[j] < a2[p]:
                 p = j
                 j += 1
-        a[i], a[p] = a[p], a[i]
+        a2[i], a2[p] = a2[p], a2[i]
     en_time = time.time()
     x2.append(k)
     y2.append(en_time - st_time)
@@ -45,9 +45,9 @@ while k <= 100:  #хотелось существенно больше, для �
     for i in range(1, len(a)):
         j = i - 1
         while j >= 0 and a[i] < a[j]:
-            a[j + 1] = a[j]
+            a3[j + 1] = a3[j]
             j -= 1
-            a [j + 1] = i
+            a3[j + 1] = i
     en_time = time.time()
     x3.append(k)
     y3.append(en_time - st_time)
@@ -57,9 +57,10 @@ print(y2)
 print(y3)
 #график
 plt.figure()
-plt.plot(x1, y1)
-plt.plot(x2,y2)
-plt.plot(x3,y3)
+plt.plot(x1, y1, 'red') #пузырек
+plt.plot(x2,y2, 'yellow') #выбор
+plt.plot(x3,y3,'green') #вставки
+plt.legend()
 plt.show()
 
 
